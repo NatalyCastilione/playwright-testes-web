@@ -12,8 +12,8 @@ export default defineConfig({
     actionTimeout: 10 * 1000,
     navigationTimeout: 30 * 1000,
     browserName: 'chromium',
-    headless: true,
+    headless: false,
     screenshot: 'on',
-    trace: 'on',
+    trace: 'retalion-on-failure',
   },
 });
