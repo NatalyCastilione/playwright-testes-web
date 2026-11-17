@@ -5,7 +5,6 @@ test.only('@Web Client App login', async ({ page }) => {
     const productName = 'ZARA COAT 3';
     const products = page.locator(".card-body");
     const email = "natalycastilione@hotmail.com";
-
     await page.goto("https://rahulshettyacademy.com/client");
     await page.locator("#userEmail").fill(email);
     await page.locator("#userPassword").fill("Teste@1234");
