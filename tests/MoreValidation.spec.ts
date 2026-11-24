@@ -16,7 +16,7 @@ test("Popup validations", async ({ page }) => {
         
 });
 
-test.only("Screenshot & Visual comparision", async ({ page }) => {
+test("Screenshot & Visual comparision", async ({ page }) => {
 
     await page.goto("https://rahulshettyacademy.com/AutomationPractice/");
     await expect(page.locator("#displayed-text")).toBeVisible();
@@ -26,4 +26,10 @@ test.only("Screenshot & Visual comparision", async ({ page }) => {
     await expect(page.locator("#displayed-text")).toBeHidden();
 
 
+});
+
+test.only('visual', async ({ page }) => {
+
+    await page.goto("https://google.com/");
+    expect(await page.screenshot()).toMatchSnapshot('landing.png');
 });
