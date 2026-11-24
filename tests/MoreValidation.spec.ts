@@ -15,3 +15,15 @@ test("Popup validations", async ({ page }) => {
         console.log(textCheck).split(" ")[1].trim();
         
 });
+
+test.only("Screenshot & Visual comparision", async ({ page }) => {
+
+    await page.goto("https://rahulshettyacademy.com/AutomationPractice/");
+    await expect(page.locator("#displayed-text")).toBeVisible();
+    await page.locator('#displayed-text').screenshot({path: 'partialScreenshot.png' });
+    await page.locator("#hide-textbox").click();
+    await page.screenshot({path: 'screenshot.png' });
+    await expect(page.locator("#displayed-text")).toBeHidden();
+
+
+});
